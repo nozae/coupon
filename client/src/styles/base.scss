@@ -1,0 +1,119 @@
+@import "utils";
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css');
+@font-face {
+	font-family: 'itemimg';
+	src: url('/font/itemimg.eot?34556408');
+	src: url('/font/itemimg.eot?34556408#iefix') format('embedded-opentype'),
+			 url('/font/itemimg.woff?34556408') format('woff'),
+			 url('/font/itemimg.ttf?34556408') format('truetype'),
+			 url('/font/itemimg.svg?34556408#itemimg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "itemimg";
+  font-style: normal;
+  font-weight: normal;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.icon-drink_01:before { content: '\e800'; }
+.icon-drink_02:before { content: '\e801'; }
+.icon-drink_03:before { content: '\e802'; }
+.icon-drink_04:before { content: '\e803'; }
+.icon-drink_05:before { content: '\e804'; }
+.icon-drink_06:before { content: '\e805'; }
+.icon-drink_07:before { content: '\e806'; }
+.icon-food_01:before { content: '\e807'; }
+.icon-food_02:before { content: '\e808'; }
+.icon-food_03:before { content: '\e809'; }
+.icon-food_04:before { content: '\e80a'; }
+.icon-food_05:before { content: '\e80b'; }
+.icon-food_06:before { content: '\e80c'; }
+.icon-food_07:before { content: '\e80d'; }
+.icon-food_08:before { content: '\e80e'; }
+.icon-food_09:before { content: '\e80f'; }
+.icon-food_10:before { content: '\e810'; }
+.icon-food_11:before { content: '\e811'; }
+.icon-food_12:before { content: '\e812'; }
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+	font-family: 'Roboto', sans-serif;
+}
+
+body {
+	margin: 0;
+	padding:0;
+	font-size: 1.6rem;
+	color: $txt-base;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3, p, span, em, i { font-weight: 300; margin: 0; padding: 0; }
+
+input {
+	// border: none;
+	// border-bottom: $border;
+	outline: none;
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+select {
+	// border: none;
+	// border-bottom: $border;
+	display: block;
+	width: 100%;
+	outline: none;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: $txt-base;
+}
+
+.transition {
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-o-transition: 0.3s;
+	-ms-transition: 0.3s;
+	transition: 0.3s;
+}

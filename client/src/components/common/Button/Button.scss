@@ -1,0 +1,87 @@
+@import "utils";
+
+.Button {
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  font-size: 1.6rem;
+  border-radius: 2px;
+	cursor: pointer;
+	font-weight: normal;
+  &.default {
+    display: inline-block;
+		border-radius: 4px;
+		padding: 0.6rem 1.4rem;
+		margin: 1.5rem auto 0;
+		background: #30295c;
+		color: $dark-txt-base;
+		font-size: 1.4rem;
+		
+		&+& {
+			margin-left: 1rem;
+		}
+    &:hover {
+      background: #362e68;
+      color: $dark-txt-hover;
+    }
+	}
+	&.confirm {
+		display: block;
+		border-radius: 4px;
+		padding: 0.6rem 1.4rem;
+		margin: 1.5rem auto 0;
+		background: $btn-base;
+		color: $dark-txt-hover;
+		font-size: 1.4rem;
+
+    &:hover {
+      background: $btn-base-hover;
+    }
+  }
+	&.highlight {
+		display: block;
+		border-radius: 4px;
+		padding: 1.5rem 0;
+		margin: 3rem auto 0;
+		background: #30295c;
+		color: $dark-txt-base;
+		
+    &:hover {
+      background: #362e68;
+      color: $dark-txt-hover;
+    }
+	}
+	&.close {
+		background: transparent;
+		color: $txt-base;
+		position: absolute;
+		top: 9px; right: 8px;
+		width: 4rem; height: 4rem;
+		font-size: 2rem;
+		padding: 1rem;
+	}
+	&.icon {
+		background: transparent;
+		color: $icon-base;
+		position: absolute;
+		font-size: 1.6rem;
+		padding: 0;
+		text-align: center;
+		&:hover {
+			color: $icon-hover;
+		}
+		svg {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 0 auto;
+		}
+	}
+	&.trash {
+		width: 4rem; height: 4rem;
+		top: 50%; right: 0;
+		margin-top: -2rem;
+	}
+	&.w80 { width: 80%; }
+	&.w100 { width: 100%; }
+}

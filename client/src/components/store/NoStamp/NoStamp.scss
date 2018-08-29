@@ -1,0 +1,40 @@
+@import "utils";
+
+.NoStamp{
+	.NoStampCard {
+		width: 80%;
+		margin: 0 auto;
+		display: flex;
+		flex-wrap: wrap;
+		padding: 2rem;
+		background-color: #7766e3;
+		border-radius: 6px;
+	
+		.Stamp {
+			width: calc(20% - 10px);
+			padding-top: calc(20% - 10px);
+			position: relative;
+			margin: 5px;
+			background: #7f6cf2;
+			border-radius: 50%;
+	
+			span {
+				display: block;
+				position: absolute;
+				top:50%; left: 50%;
+				margin: -10px 0 0 -10px;
+				width: 20px; height: 20px;
+				text-align: center; line-height: 20px;
+				color: #cbc8dc;
+			}
+		}
+	}
+
+	h2 {
+		width: 80%;
+		margin: 2rem auto;
+		text-align: center;
+		color: $dark-txt-base;
+		font-size: 1.6rem;
+	}
+}

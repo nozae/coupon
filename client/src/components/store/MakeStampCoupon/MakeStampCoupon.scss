@@ -1,0 +1,47 @@
+@import "utils";
+
+.MakeStampCoupon {
+	padding: 1rem;
+	border: $border;
+	display: flex;
+	position: relative;
+
+	.couponImg {
+		width: 60px; height: 60px;
+		border-radius: 50%;
+		background: $stamp-color;
+		display: flex;
+
+		i {
+			display: flex;
+			flex: 1;
+			justify-content: center;
+			align-items: center;
+			font-size: 3.6rem;
+			color: $txt-active;
+		}
+	}
+
+	.couponItem {
+		padding-left: 1.5rem;
+		flex: 1;
+
+		p {
+			display: block;
+		}
+
+		.marker {
+			color: $txt-active;
+			font-size: 1.2rem;
+			display: inline-block;
+			border: 1px solid $txt-active;
+			padding: 0.3rem 0.6rem;
+			border-radius: 11px;
+			margin-top: 0.5rem;
+		}
+	}
+
+	&+& {
+		border-top: none;
+	}
+}

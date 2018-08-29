@@ -1,0 +1,25 @@
+@import "utils";
+
+.MakeStampBox {
+	padding: 2rem;
+
+	input[type=text] {
+		width: 100%;
+		height: 3rem;
+		display: block;
+		line-height: 3rem;
+		margin-bottom: 1rem;
+	}
+
+	select {
+		width: 100%;
+		height: 3rem;
+		display: block;
+		line-height: 3rem;
+		margin-bottom: 1rem;
+	}
+
+	h3 {
+		font-size: 1.4rem;
+	}
+}

@@ -1,0 +1,21 @@
+@import "utils";
+
+.StampList{
+	padding: 0 3rem;
+	height: auto;
+	
+	.swipe {
+		padding: 1rem;
+		height: auto;
+
+		.StampWrap {
+			position: relative;
+			background: #fff;
+			min-height: 40rem;
+			border-radius: 4px;
+			box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.4), 
+									0px 1px 1px 0px rgba(0, 0, 0, 0.14), 
+									0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+		}
+	}
+}
