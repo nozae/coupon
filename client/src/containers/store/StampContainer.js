@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import { compose } from 'redux';
+import { bindActionCreators, compose } from 'redux';
 import { connect } from 'react-redux';
 import Title from 'components/store/Title';
 import StampList from 'components/store/StampList';
 import Button from 'components/common/Button';
 import './StampContainer.scss';
+import * as storeActions from 'store/modules/store';
 
 class StampContainer extends Component {
+  componentDidMount() {
+    const { StoreActions, storeInfo } = this.props;
+    StoreActions.getStampInfo(storeInfo.storeId);
+  }
+
   shouldComponentUpdate(nextProps) {
     const { stampList } = this.props;
     return stampList !== nextProps.stampList;
@@ -35,8 +41,13 @@ class StampContainer extends Component {
 
 export default compose(
   withRouter,
-  connect(({ base, store }) => ({
-    storeInfo: base.storeInfo,
-    stampList: store.stampList,
-  }))
+  connect(
+    ({ base, store }) => ({
+      storeInfo: base.storeInfo,
+      stampList: store.stampList,
+    }),
+    dispatch => ({
+      StoreActions: bindActionCreators(storeActions, dispatch),
+    })
+  )
 )(StampContainer);

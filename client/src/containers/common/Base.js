@@ -3,16 +3,10 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators, compose } from 'redux';
 import * as baseActions from 'store/modules/base';
-import * as storeActions from 'store/modules/store';
 
 class Base extends Component {
   componentDidMount() {
-    this.initialize().then(() => {
-      const { StoreActions, userType, storeInfo } = this.props;
-      if (userType === 1) {
-        StoreActions.getStampInfo(storeInfo.storeId);
-      }
-    });
+    this.initialize();
   }
 
   initialize = async () => {
@@ -48,7 +42,6 @@ export default compose(
     }),
     dispatch => ({
       BaseActions: bindActionCreators(baseActions, dispatch),
-      StoreActions: bindActionCreators(storeActions, dispatch),
     })
   )
 )(Base);

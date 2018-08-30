@@ -1,6 +1,21 @@
 'use strict';
 
 var store = {
+    setStamp: function(_query, _callback) {
+        var sql = `INSERT INTO stamp SET ?`;
+
+        engine.rds.execute(sql, _query, 'cp', _callback);
+    },
+
+    setCoupon: function(_query, _callback) {
+        var sql = `
+					INSERT INTO coupon_config (storeId, stampId, couponPublishTerm, couponItemName, itemImgId)
+					VALUES ?
+				`;
+
+        engine.rds.execute(sql, [_query], 'cp', _callback);
+    },
+
     get: function(_query, _callback) {
         var values = [];
         var where_query = '1=1';

@@ -97,11 +97,52 @@ router.post('/getinfo', (req, res) => {
 
 /* 스탬프 저장하기 */
 router.post('/setstamp', (req, res) => {
-    console.log(req.body.stampInfo.couponConfig);
-    return res.json({
-        isErr: false,
-        msg: '스탬프 정보를 저장했습니다.',
-        data: req.body,
+    const { couponConfig, storeId } = req.body.stampInfo;
+    if (is_empty(req.body.stampInfo.stampMaximum)) {
+        return res.json({
+            isErr: true,
+            msg: '스탬프 정보가 없습니다.',
+            data: null,
+        });
+    }
+
+    if (is_empty(couponConfig)) {
+        return res.json({
+            isErr: true,
+            msg: '쿠폰설정이 없습니다.',
+            data: null,
+        });
+    }
+
+    delete req.body.stampInfo.couponConfig;
+
+    let query = req.body.stampInfo;
+
+    model.store.store.setStamp(query, (err, r) => {
+        if (err) {
+            throw err;
+        }
+
+        let query = couponConfig.map(coupon => {
+            const values = [];
+            values.push(storeId);
+            values.push(r.insertId);
+            for (let key in coupon) {
+                values.push(coupon[key]);
+            }
+            return values;
+        });
+
+        model.store.store.setCoupon(query, (err, r) => {
+            if (err) {
+                throw err;
+            }
+            return res.json({
+                isErr: false,
+                msg: '스탬프 정보를 저장했습니다.',
+                data: null,
+            });
+        });
     });
 });
 

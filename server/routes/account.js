@@ -8,20 +8,20 @@ app.use(bodyParser.json());
 /* GET users listing. */
 router.get('/getsession', (req, res) => {
     const sessionData = model.user.session.get(req);
-    if (!is_empty(sessionData)) {
+    if (is_empty(sessionData)) {
         return res.json({
-            logged: true,
-            isErr: false,
-            msg: '세션데이터가 존재합니다.',
-            data: sessionData,
+            logged: false,
+            isErr: true,
+            msg: '세션데이터가 없습니다.',
+            data: null,
         });
     }
 
     return res.json({
-        logged: false,
-        isErr: true,
-        msg: '세션데이터가 없습니다.',
-        data: null,
+        logged: true,
+        isErr: false,
+        msg: '세션데이터가 존재합니다.',
+        data: sessionData,
     });
 });
 
